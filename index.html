@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Don't Open Strange Links</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #080808;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  width: 90%;
+  max-width: 450px;
+  padding: 28px;
+  text-align: center;
+  background: #151515;
+  border: 2px solid #ff2525;
+  border-radius: 16px;
+  box-shadow: 0 0 25px #ff000044;
+}
+
+h1 { color: #ff3333; }
+
+input, button {
+  width: 100%;
+  padding: 13px;
+  margin-top: 14px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+input {
+  color: white;
+  background: #080808;
+  border: 1px solid #777;
+  text-align: center;
+}
+
+button {
+  border: none;
+  color: white;
+  background: #e21b1b;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#error {
+  color: #ff5555;
+}
+
+</style>
+</head>
+
+<body>
+<div class="card">
+  <h1>⚠ DON'T OPEN STRANGE LINKS</h1>
+
+  <p>Think before opening unknown links.</p>
+  <p>Enter the access code to continue.</p>
+
+  <input
+    type="password"
+    id="code"
+    maxlength="4"
+    inputmode="numeric"
+    placeholder="Enter access code"
+  >
+
+  <button onclick="unlock()">UNLOCK</button>
+
+  <p id="error"></p>
+</div>
+
+<script>
+function unlock() {
+  const code = document.getElementById("code").value;
+
+  if (code === "1811") {
+    window.location.href = "https://xhamster.com/";
+  } else {
+    document.getElementById("error").textContent =
+      "❌ Wrong code! Try again.";
+  }
+}
+
+document.getElementById("code").addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    unlock();
+  }
+});
+</script>
+</body>
+</html>
+# NEVER-OPEN-STRANGE-LINKS-AGAIN
+REGRET AFTER OPENING
